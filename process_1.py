@@ -10,7 +10,7 @@ def process_unstructured_data(lines):
 
 address="raw/"
 
-name="dev.src"
+name="test.src"
 # Process the data into a list
 with open(address+name,"r") as f:
     lines = [line.rstrip('\n') for line in f]
@@ -26,23 +26,24 @@ with open(address+name+"fa.txt", 'w') as file:
     # Write the data to the file
     file.write(data_to_write)
 
-# with open(input_file, "r") as file:
-#     lines = file.readlines()
-#
-# with open(output_file, "w") as file:
-#     for line in lines:
-#         if line.strip():  # Checks if the line is not empty
-#             file.write(line)
-#
+with open(input_file, "r") as file:
+    lines = file.readlines()
+
+with open(output_file, "w") as file:
+    for line in lines:
+        if line.strip():  # Checks if the line is not empty
+            file.write(line)
+
 # # Using "with open" syntax to automatically close the file
 #
-# with open(output_file ,"r") as f:
-#      lines = [line.rstrip('\n') for line in f]
-#
-# setlines=set(lines)
-# lines=list(setlines)
-# #lines = list(dict.fromkeys(lines))
-# with open(output_file+".txt", "w") as file:
-#     for line in lines:
-#         if line.strip():  # Checks if the line is not empty
-#             file.write(line+"\n")
+with open(output_file ,"r") as f:
+     lines = [line.rstrip('\n') for line in f]
+
+setlines=set(lines)
+lines=list(setlines)
+out=name[:-3]+"dict"
+#lines = list(dict.fromkeys(lines))
+with open(out, "w") as file:
+    for line in lines:
+        if line.strip():  # Checks if the line is not empty
+            file.write(line+"\n")
