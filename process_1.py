@@ -1,8 +1,9 @@
 def process_unstructured_data(lines):
     knowledge_list = []
     for line in lines:
+
         # Replace underscores with spaces and split into components
-        knowledge_list.extend([entry.replace("_", " ") for entry in line.split(" ")])
+        knowledge_list.extend([entry.replace("_", "\n") for entry in line.split(" ")])
     return knowledge_list
 
 # Example unstructured data
